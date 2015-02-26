@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'ratings/create'
+
+  get 'ratings/destroy'
+
+  get 'reviews/create'
+
+  get 'reviews/new'
+
+  get 'reviews/destroy'
+
   get 'items/show'
 
   get 'items/new'
