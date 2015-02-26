@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'sheets/index'
+
+  get 'sheets/show'
+
+  get 'sheets/new'
+
+  get 'sheets/edit'
+
+  get 'sheets/create'
+
+  get 'sheets/update'
+
+  get 'sheets/destroy'
+
   devise_for :users
   get 'welcome/index'
 
