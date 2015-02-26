@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/update'
+
+  get 'users/show'
+
   get 'sheets/index'
 
   get 'sheets/show'
