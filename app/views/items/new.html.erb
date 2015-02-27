@@ -1,2 +1,41 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<!-- Modal -->
+<div class="modal fade" id="newItem" tabindex="-1" role="dialog" aria-labelledby="newItemLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Item</h4>
+      </div>
+      <div class="modal-body">
+        
+        <table class="table">
+
+        <!-- TEMPORARY Item Entry -->
+          <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Screen Size (Inches)</th>
+            <th>Weight (Pounds)</th>
+            <th>CPU Speed (GHz)</th>
+            <th>RAM (GB)</th>
+            <th>HDD (GB)</th>
+          </tr>
+          <tr>
+            <td>Lenovo</td>
+            <td>T410</td>
+            <td>14</td>
+            <td>6</td>
+            <td>2.53</td>
+            <td>3.6</td>
+            <td>120</td>
+          </tr>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

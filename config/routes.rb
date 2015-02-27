@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'items/show'
 
-  get 'items/new'
+  get 'items/_new'
 
   get 'items/edit'
 
