@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+
+  resources :sheets
+    resources :items
+    resources :columns
+
+  get 'welcome/index'
+
+  get 'welcome/about'
+
   get 'ratings/create'
 
   get 'ratings/destroy'
@@ -39,10 +50,6 @@ Rails.application.routes.draw do
 
   get 'sheets/destroy'
 
-  devise_for :users
-  get 'welcome/index'
-
-  get 'welcome/about'
 
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
