@@ -1,6 +1,6 @@
 <h1>Create a New Specsheet</h1>
 
-<%= form_for @sheet do |s| %>
+<%= form_for Sheet.new, :url => {:action => :create, :controller => :sheets} do |f| %>
 
   <div class="panel panel-deafult">
     <div class="panel-body">
@@ -47,7 +47,7 @@
       </div>
 
       <div class="form-group">
-        <%= s.submit "Save Specsheet!", class: 'btn btn-default' %>
+        <%= f.submit "Save Specsheet!", class: 'btn btn-default' %>
       </div>
 
     </div>

@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :sheets
-    resources :items
-    resources :columns
 
   get 'welcome/index'
 
@@ -44,7 +41,7 @@ Rails.application.routes.draw do
 
   get 'sheets/edit'
 
-  get 'sheets/create'
+  post 'sheets/create'
 
   get 'sheets/update'
 

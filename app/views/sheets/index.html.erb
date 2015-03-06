@@ -15,7 +15,7 @@
     <table class="table">
 
 <!-- TEMPORARY TABLES -->
-        <tr>
+<!--         <tr>
           <td><%= link_to "Laptops", sheets_show_path %></td>
           <td>3 items</td>
           <td>0 reviews</td>
@@ -29,20 +29,16 @@
           <td>Bacon</td>
           <td>21 items</td>
           <td>375 reviews</td>
-        </tr>
+        </tr> -->
 
 <!-- WHAT I WACTUALLY WANT TO USE -->
-      <% if false %>
 
       <% @sheets.each do |sheet| %>
         <tr>
-          <td><%= link_to @sheet.name, sheet %></td>
-          <td><%= @sheet.items.count %> items</td>
-          <td><%= @sheet.reviews.count %></td>
+          <td><%= link_to sheet.name, sheet %></td>
+          <td><%= sheet.items.count %> items</td>
+          <td><%= sheet.reviews.count %></td>
         </tr>
       <% end %>
 
-      <% end %>
-
     </table>
-</div>

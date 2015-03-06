@@ -1,10 +1,10 @@
 class SheetsController < ApplicationController
   def index
-    @sheet = Sheet.new
+    @sheets = Sheet.all
   end
   
   def show
-    #@sheet = Sheet.find(params[:id])
+    @sheet = Sheet.all #Change me!
   end
 
   def new
@@ -17,7 +17,7 @@ class SheetsController < ApplicationController
   def create
     @sheet = Sheet.new
     if @sheet.save
-      redirect_to @sheet
+      redirect_to welcome_index_path
     else
       flash[:error] = "Error saving sheet."
       render :new
