@@ -13,31 +13,12 @@
 
   </div>
     <table class="table">
-
-<!-- TEMPORARY TABLES -->
-<!--         <tr>
-          <td><%= link_to "Laptops", sheets_show_path %></td>
-          <td>3 items</td>
-          <td>0 reviews</td>
-        </tr>
-        <tr>
-          <td>Cameras</td>
-          <td>75 items</td>
-          <td>60 reviews</td>
-        </tr>
-        <tr>
-          <td>Bacon</td>
-          <td>21 items</td>
-          <td>375 reviews</td>
-        </tr> -->
-
-<!-- WHAT I WACTUALLY WANT TO USE -->
-
       <% @sheets.each do |sheet| %>
         <tr>
-          <td><%= link_to sheet.name, sheet %></td>
-          <td><%= sheet.items.count %> items</td>
-          <td><%= sheet.reviews.count %></td>
+          <td><%= sheet.id %></td>
+          <td><%= link_to [sheet.title], sheets_index_path %></td>
+          <td>number of items</td>
+          <td>number of reviews</td>
         </tr>
       <% end %>
 
