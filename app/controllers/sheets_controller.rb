@@ -15,7 +15,7 @@ class SheetsController < ApplicationController
   end
 
   def create
-    @sheet = Sheet.new
+    @sheet = Sheet.new(sheet_params)
     if @sheet.save
       redirect_to welcome_index_path
     else
@@ -31,4 +31,11 @@ class SheetsController < ApplicationController
   def destroy
     @sheet = Sheet.find(params[:id])
   end
+
+  private
+
+  def sheet_params
+    params.require(:sheet).permit(:title)
+  end
+
 end

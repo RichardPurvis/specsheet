@@ -16,7 +16,7 @@
       <% @sheets.each do |sheet| %>
         <tr>
           <td><%= sheet.id %></td>
-          <td><%= link_to [sheet.title], sheets_index_path %></td>
+          <td><%= link_to sheet.title, sheets_index_path %></td>
           <td>number of items</td>
           <td>number of reviews</td>
         </tr>
