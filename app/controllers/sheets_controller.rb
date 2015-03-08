@@ -4,7 +4,7 @@ class SheetsController < ApplicationController
   end
   
   def show
-    @sheet = Sheet.all #Change me!
+    @sheet =  Sheet.find(params[:id])
   end
 
   def new
