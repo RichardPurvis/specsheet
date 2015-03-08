@@ -17,7 +17,7 @@ class SheetsController < ApplicationController
   def create
     @sheet = Sheet.new(sheet_params)
     if @sheet.save
-      redirect_to welcome_index_path
+      redirect_to @sheet
     else
       flash[:error] = "Error saving sheet."
       render :new
