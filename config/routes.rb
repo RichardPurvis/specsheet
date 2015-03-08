@@ -47,6 +47,9 @@ Rails.application.routes.draw do
 
   get 'sheets/destroy'
 
+  resources :sheets do
+    resources :items
+  end
 
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
