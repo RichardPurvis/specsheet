@@ -9,9 +9,13 @@
         <button class="btn btn-primary"><i class="glyphicon-search"></i></button>
       </div>
     </div>
-    </div>
-
   </div>
+  <% if @sheet.description %>
+    <div class="panel-body">
+      <p><%= @sheet.description %></p>
+    </div>
+  <% end %>
+</div>
     <table class="table">
 
 <!-- TEMPORARY SpecSheet -->

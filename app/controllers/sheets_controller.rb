@@ -35,7 +35,7 @@ class SheetsController < ApplicationController
   private
 
   def sheet_params
-    params.require(:sheet).permit(:title)
+    params.require(:sheet).permit(:title, :description)
   end
 
 end

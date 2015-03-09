@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'columns/edit'
+
+  get 'columns/create'
+
+  get 'columns/destroy'
+
   devise_for :users
 
 
