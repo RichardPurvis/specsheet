@@ -1,9 +1,8 @@
 <h1>Create a New Specsheet</h1>
 
-<%= form_for [Sheet.new], :url => {:action => :create, :controller => :sheets} do |f| %>
-
-  <div class="panel panel-default">
-    <div class="panel-body">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= form_for [Sheet.new], :url => {:action => :create, :controller => :sheets} do |f| %>
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">Name of Specsheet:</span>
         <%= f.text_field :title, class: 'form-control', placeholder: "Title" %>
@@ -16,12 +15,6 @@
         </div>
       </div>
   <br><br><br>
-
-<!-- Column form used to be here -->
-      <%= render partial: "column_form" %>
-      <%= render partial: "column_form" %>
-  <br><br><br>
-
       <div class="col-lg-2">
         <button type="button" class="btn btn-default">Add Column</button>
       </div>
@@ -29,7 +22,8 @@
       <div class="form-group">
         <%= f.submit "Save Specsheet!", class: 'btn btn-default' %>
       </div>
-
-    </div>
+    <% end %>
+      <%= render partial: "column_form" %>
+  <br><br><br>
   </div>
-<% end %>
+</div>
