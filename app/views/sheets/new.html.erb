@@ -2,7 +2,7 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-    <%= form_for [Sheet.new], :url => {:action => :create, :controller => :sheets} do |f| %>
+    <%= form_for Sheet.new, :url => {:action => :create, :controller => :sheets} do |f| %>
       <div class="input-group input-group-lg">
         <span class="input-group-addon" id="sizing-addon1">Name of Specsheet:</span>
         <%= f.text_field :title, class: 'form-control', placeholder: "Title" %>

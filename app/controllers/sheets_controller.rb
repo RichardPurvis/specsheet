@@ -4,11 +4,14 @@ class SheetsController < ApplicationController
   end
   
   def show
-    @sheet =  Sheet.find(params[:id])
+    @sheet = Sheet.find(params[:id])
   end
 
   def new
-    @sheet = Sheet.new
+    #@sheet = Sheet.new.tap |sheet|
+      #{ sheet.columns.build( name: 'New Column' ) }
+    #end
+    #@sheet.save
   end
 
   def edit
