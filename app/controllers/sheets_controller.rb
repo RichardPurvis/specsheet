@@ -12,6 +12,9 @@ class SheetsController < ApplicationController
       #{ sheet.columns.build( name: 'New Column' ) }
     #end
     #@sheet.save
+
+    
+
   end
 
   def edit
@@ -25,6 +28,9 @@ class SheetsController < ApplicationController
       flash[:error] = "Error saving sheet."
       render :new
     end
+  #for loop through each row of column
+  #manually build hash from two fields for column header and type both are strings (validate type)
+  #build array of said hashes
   end
 
   def update
