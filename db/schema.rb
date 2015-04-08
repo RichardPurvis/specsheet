@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312214508) do
+ActiveRecord::Schema.define(version: 20150404155949) do
 
   create_table "columns", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
+    t.integer  "sheet_id"
   end
+
+  add_index "columns", ["sheet_id"], name: "index_columns_on_sheet_id"
 
   create_table "sheets", force: true do |t|
     t.string   "title"
@@ -26,6 +30,11 @@ ActiveRecord::Schema.define(version: 20150312214508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "column_list"
+    t.string   "column_heading"
+    t.string   "column_type"
+    t.string   "column_title"
+    t.string   "column_data_type"
+    t.string   "column"
   end
 
   create_table "users", force: true do |t|

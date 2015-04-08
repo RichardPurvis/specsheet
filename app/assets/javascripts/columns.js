@@ -1,11 +1,8 @@
-$(function() {
-    var template = "<div class="col-lg-6"><div class="input-group"><span class="input-group-addon" id="sizing-addon1">Column Heading:</span><textarea name='column[content][INDEX]'></textarea></div></div>",
-        index = $('textarea').length,
-        compiled_template;
-    
-    $('#js-add-column-row').click(function() {
-        compiled_textarea = $(template.replace("INDEX", index));
-        $('#sheetForm').append(compiled_textarea);
-        index = index + 1;
-    });
-});
+var counter = 1;
+function addInput(divName){
+  var htmlString = "<div class='row'><div class='col-xs-6'><input class='form-control' id='sheet_column_title' name='sheet_array[][title]' placeholder='Column Title' type='text'></div><div class='col-xs-6'><input class='form-control' id='sheet_column_data_type' name='sheet_array[][type]' placeholder='Data Type (Numbers, Words, yes/no)' type='text'></div></div>";
+  var newdiv = document.createElement('div');
+  newdiv.innerHTML = htmlString;
+  document.getElementById(divName).appendChild(newdiv);
+  counter++;
+}
