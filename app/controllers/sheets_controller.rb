@@ -16,18 +16,21 @@ class SheetsController < ApplicationController
 
   def create
     @sheet = Sheet.new(sheet_params)
+    @column_array_items = @sheet[:column]
+
+    @column_array_items.each do |key, value|
+      @column = Column.new
+      @column[:column_title] = key
+      @column[:column_data_type] = value
+      @column.save
+    end
+
     if @sheet.save
       redirect_to @sheet
     else
       flash[:error] = "Error saving sheet."
       render :new
     end
-
-    
-    
-  #for loop through each row of column
-  #manually build hash from two fields for column header and type both are strings (validate type)
-  #build array of said hashes
   end
 
   def update
@@ -41,7 +44,11 @@ class SheetsController < ApplicationController
   private
 
   def sheet_params
-    params.require(:sheet).permit(:title, :type)
+    params.require(:sheet).permit!
+  end
+
+    def column_params
+    params.require(:column).permit!
   end
 
 end
