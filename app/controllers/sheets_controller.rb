@@ -5,6 +5,7 @@ class SheetsController < ApplicationController
   
   def show
     @sheet = Sheet.find(params[:id])
+    @columns = @sheet.columns.all
   end
 
   def new
@@ -16,13 +17,9 @@ class SheetsController < ApplicationController
 
   def create
     @sheet = Sheet.new(sheet_params)
-    @column_array_items = @sheet[:column]
 
-    @column_array_items.each do |key, value|
-      @column = Column.new
-      @column[:column_title] = key
-      @column[:column_data_type] = value
-      @column.save
+    column_params.each do |value|
+      @sheet.columns.build(value.permit(:title, :data_type))
     end
 
     if @sheet.save
@@ -44,11 +41,10 @@ class SheetsController < ApplicationController
   private
 
   def sheet_params
-    params.require(:sheet).permit!
+    params.require(:sheet).permit(:title, :description, :created_at, :updated_at, :column)
   end
 
-    def column_params
-    params.require(:column).permit!
+  def column_params
+    params.require(:column)
   end
-
 end

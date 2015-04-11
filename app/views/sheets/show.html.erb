@@ -20,40 +20,14 @@
 
 <!-- TEMPORARY SpecSheet -->
       <tr>
-        <th>Make</th>
-        <th>Model</th>
-        <th>Screen Size (Inches)</th>
-        <th>Weight (Pounds)</th>
-        <th>CPU Speed (GHz)</th>
-        <th>RAM (GB)</th>
-        <th>HDD (GB)</th>
+        <% @sheet.columns.each do |col|%>
+          <th><%= col.title =%></th>
+        <% end %>
       </tr>
       <tr>
-        <td>Lenovo</td>
-        <td>T410</td>
-        <td>14</td>
-        <td>6</td>
-        <td>2.53</td>
-        <td>3.6</td>
-        <td>120</td>
-      </tr>
-      <tr>
-        <td>Sager</td>
-        <td>NP9772-S</td>
-        <td>17.3</td>
-        <td>8.6</td>
-        <td>4</td>
-        <td>32</td>
-        <td>1500</td>
-      </tr>
-      <tr>
-        <td>Acer</td>
-        <td>Aspire V5-123-3496</td>
-        <td>11.6</td>
-        <td>2.5</td>
-        <td>1</td>
-        <td>2</td>
-        <td>320</td>
+        <% @sheet.columns.each do |col|%>
+          <td><%= col.data_type =%></td>
+        <% end %>
       </tr>
     </table>
 
